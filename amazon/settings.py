@@ -80,16 +80,19 @@ WSGI_APPLICATION = 'amazon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DATABASE_NAME'),
-        'USER': os.getenv('DATABASE_USER'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': os.getenv('DATABASE_HOST'),
-        'PORT': os.getenv('DATABASE_PORT'),
+        'NAME': 'amazon_clone',
+        'USER': 'root',
+        
+        'PASSWORD': 'root@123',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
          'OPTIONS': {
             'charset': 'utf8mb4',
         },
     },
+
 }
+
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
