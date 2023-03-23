@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-$ybza86rh8wa^66%^&h!8jy2#d4kftk-t91rj!g)c1i1+g1@-b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_DOMAIN = 'https://web-production-50cf.up.railway.app'
-CSRF_TRUSTED_ORIGINS = ['https://web-production-50cf.up.railway.app']
+#CSRF_COOKIE_DOMAIN = 'https://web-production-50cf.up.railway.app'
+#CSRF_TRUSTED_ORIGINS = ['https://web-production-50cf.up.railway.app']
 
 # Application definition
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,23 +75,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'amazon.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+ #Database
+ #https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'amazon_clone',
-        'USER': 'root',
-        'PASSWORD': 'root@123',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT'),
          'OPTIONS': {
             'charset': 'utf8mb4',
         },
     },
 }
-
-# Password validation
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'railway',
+#        'USER': 'root',
+#        'PASSWORD': 'pVfd76xt0vUKrRo8QK06',
+#        'HOST': 'containers-us-west-203.railway.app',
+#        'PORT': '7542',
+#        }
+#    }
+#pVfd76xt0vUKrRo8QK06
+#vlidation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -128,6 +139,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
