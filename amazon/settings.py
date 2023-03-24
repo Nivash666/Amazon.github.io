@@ -77,21 +77,29 @@ WSGI_APPLICATION = 'amazon.wsgi.application'
 
  #Database
  #https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'amazon_clone',
+#        'USER': 'root',
+#        
+#        'PASSWORD': 'root@123',
+#        'HOST': '127.0.0.1',
+#        'PORT': '3306',
+#         'OPTIONS': {
+#            'charset': 'utf8mb4',
+#        },
+#    },
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'amazon_clone',
-        'USER': 'root',
-        
-        'PASSWORD': 'root@123',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-         'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
-    },
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+
+
 
 #DATABASES = {
 #    'default': {
