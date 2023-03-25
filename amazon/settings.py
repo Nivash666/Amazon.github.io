@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_DOMAIN = 'web-production-50cf.up.railway.app'
-CSRF_TRUSTED_ORIGINS = ['https://web-production-50cf.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['web-production-50cf.up.railway.app']
 
 # Application definition
 
