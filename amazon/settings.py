@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-$ybza86rh8wa^66%^&h!8jy2#d4kftk-t91rj!g)c1i1+g1@-b
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_DOMAIN = 'amazonclone.up.railway.app'
 CSRF_TRUSTED_ORIGINS = ['https://amazonclone.up.railway.app/']
 
