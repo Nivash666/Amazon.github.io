@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_DOMAIN = 'amazonclone.up.railway.app'
-CSRF_TRUSTED_ORIGINS = ['https://amazonclone.up.railway.app/']
+CSRF_COOKIE_DOMAIN = 'amazon-clone.up.railway.app'
+CSRF_TRUSTED_ORIGINS = ['https://amazon-clone.up.railway.app/']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
